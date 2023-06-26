@@ -17,11 +17,11 @@ To begin, clone the repository from the link above, install the necessary depend
 
 ## Usage
 Simply follow the prompts in the command line and a new readme file will be created using user input in the current directory
-Screenshot of live project: 
+Screenshot of live project: [Video Demo](./assets/ReadmeGeneratorDemo.webm)
 
-Link to deployed project: N/A
+Link to deployed project: https://beerendan.github.io/ReadmeGenerator/
 
-Link to project gitHub repository: https://github.com/beerendan/ReadmeGenerator
+Link to project gitHub repository:  https://github.com/beerendan/ReadmeGenerator
 
 ## Credits
 https://github.com/beerendan
