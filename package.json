@@ -1,14 +1,22 @@
 {
-  "name": "static-site",
-  "version": "1.0.0",
-  "description": "",
+  "name": "inquirer",
+  "version": "8.2.4",
+  "description": "Readme Generator developed for 2023 CU Bootcamp",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Brendan Bowen",
+  "license": "MIT",
   "dependencies": {
     "inquirer": "8.2.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beerendan/ReadmeGenerator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/beerendan/ReadmeGenerator/issues"
+  },
+  "homepage": "https://github.com/beerendan/ReadmeGenerator#readme"
 }
