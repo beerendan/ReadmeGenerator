@@ -55,7 +55,9 @@ ${data.installation}
 ## Usage
 ${data.usage}
 Screenshot of live project: ${screenshot}
+
 Link to deployed project: ${data.deployed}
+
 Link to project gitHub repository: ${data.repo}
 
 ## Credits

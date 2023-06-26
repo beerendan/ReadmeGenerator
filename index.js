@@ -24,7 +24,7 @@ const questions = ()=>{
             message:"Please provide the year of your project's creation",
             name:"year",
             validate:(year)=>{
-                if (check) return true;
+                if (year) return true;
                 return "Please indicate year of creation"
             }
         },
