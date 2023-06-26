@@ -20,17 +20,13 @@ function renderLicenseBadge(license) {
     return ""
   }
 }
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
 function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
 function renderLicenseSection(license) {
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  //formatting screenshot links properly
    let screenshot = "";
   if (data.screenshotLink) {
     for (let i = 0; i < data.screenshotLink.split(",").length; i++) {
@@ -39,11 +35,19 @@ function generateMarkdown(data) {
         .trim()})`;
     }}
   renderLicenseBadge(data);
+  //Readme Structure
   return `# ${data.projName}
 
   ## Description
 ${data.description}
-Technologies used: ${data.technologies}
+This project uses: 
+${data.technologies[0]}
+${data.technologies[1]}
+${data.technologies[2]}
+${data.technologies[3]}
+${data.technologies[4]}
+${data.technologies[5]}
+${data.technologies[6]}
 
 ## Installation
 ${data.installation}
@@ -56,6 +60,10 @@ Link to project gitHub repository: ${data.repo}
 
 ## Credits
 ${data.credits}
+
+## License
+This project is ${renderLicenseBadge(data.license)} licensed.
+Copyright ${data.year} ${data.authorName}.
 `;
 }
 

@@ -9,7 +9,25 @@ const { validateHeaderName } = require("http");
 //technologies used, installation info, usage, screenshot link, credits and license
 const questions = ()=>{
     return inquirer.prompt([
-
+        {
+            type:"input",
+            message:"Please provide you first and last name:",
+            name:"authorName",
+            validate:(authorName)=>{
+                let check=authorName.match(/^[a-zA-Z]+[a-zA-Z]+/g);
+                if (check) return true;
+                return "That is a made up name. What is your REAL name?"
+            }
+        },
+        {
+            type:"input",
+            message:"Please provide the year of your project's creation",
+            name:"year",
+            validate:(year)=>{
+                if (check) return true;
+                return "Please indicate year of creation"
+            }
+        },
         {
             type: "input",
             message:"Please provide the title of your project",
@@ -71,7 +89,7 @@ const questions = ()=>{
         },
         {
             type: "input",
-            message:"Please provide a link to a screenshot",
+            message:"Please provide the file path in the desired directory for a screenshot",
             name:"screenshotLink",
         },
         {
@@ -89,12 +107,10 @@ const questions = ()=>{
     ])
 }
 
-// TODO: Create a function to write README file
-function writeReadme() {
-    inquirer
-        .prompt(questions)
-        .then((data)=>{
-            fs.writeReadme("README.md", generateReadme(answers), (err) => {
+//Changed from a function to a constant
+const writeFile=(answers)=> {
+    const results=generateMarkdown(answers)
+            fs.writeFile("README.md", results, (err) => {
                 if (err) {
                     reject(err);
                     return;
@@ -102,8 +118,8 @@ function writeReadme() {
                     console.log("Readme.md generated successfully")
                 }
             })
-        })
-    };
+        }
+
             
         
         
@@ -112,8 +128,8 @@ function writeReadme() {
 // TODO: Create a function to initialize app
 function init() {
     questions()
-    .then((questions)=>{
-        writeReadme(answers);
+    .then((answers)=>{
+        writeFile(answers);
     }
     )
 }
