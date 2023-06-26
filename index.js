@@ -90,12 +90,31 @@ const questions = ()=>{
 }
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeReadme() {
+    inquirer
+        .prompt(questions)
+        .then((data)=>{
+            fs.writeReadme("README.md", generateReadme(answers), (err) => {
+                if (err) {
+                    reject(err);
+                    return;
+                }else{
+                    console.log("Readme.md generated successfully")
+                }
+            })
+        })
+    };
+            
+        
+        
+
 
 // TODO: Create a function to initialize app
 function init() {
     questions()
-    .then((answers)=>{}
+    .then((questions)=>{
+        writeReadme(answers);
+    }
     )
 }
 
