@@ -2,20 +2,21 @@
 
   ## Description
 CLI program that uses Node.js to create professional-quality Readme.md files.
-This project uses: 
+
+This project makes use of: 
 JavaScript
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
+
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
 
 ## Installation
 To begin, clone the repository from the link above, install the necessary dependencies and run the index file in node
 
 ## Usage
-Simply follow the prompts in the command line and a new readme file will be created using user input
+Simply follow the prompts in the command line and a new readme file will be created using user input in the current directory
 Screenshot of live project: 
 
 Link to deployed project: N/A

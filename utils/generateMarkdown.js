@@ -40,14 +40,15 @@ function generateMarkdown(data) {
 
   ## Description
 ${data.description}
-This project uses: 
-${data.technologies[0]}
-${data.technologies[1]}
-${data.technologies[2]}
-${data.technologies[3]}
-${data.technologies[4]}
-${data.technologies[5]}
-${data.technologies[6]}
+
+This project makes use of: 
+${data.technologies}
+
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
 
 ## Installation
 ${data.installation}

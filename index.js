@@ -101,7 +101,7 @@ const questions = ()=>{
         {
             type:"checkbox",
             message:"Please select the technologies used to build this project",
-            choices:["HTML","CSS","JavaScript","Boostrap","Node.js","React","Other"],
+            choices:["HTML","CSS","JavaScript","Bootstrap","Node.js","React","Other"],
             name:"technologies",
         },
     ])
