@@ -9,35 +9,7 @@ const { validateHeaderName } = require("http");
 //technologies used, installation info, usage, screenshot link, credits and license
 const questions = ()=>{
     return inquirer.prompt([
-        {
-            type:"input",
-            message:"Please provide you first and last name:",
-            name:"AuthorName",
-            validate:(name)=>{
-                let check=name.match(/^[a-zA-Z]+[a-zA-Z]+/g);
-                if (check) return true;
-                return "That is a made up name. What is your REAL name?"
-            }
-        },
-        {
-            type: "input",
-            message:"Please provide your email address:",
-            name:"email",
-            validate:(email)=>{
-                let check=email.match(/\S+@\S+/g);
-                if(check) return true;
-                return "Invalid email address. Please try again"
-            }
-        },
-        {
-            type: "input",
-            message:"Please provide your github username",
-            name:"gitName",
-            validate:(gitName)=>{
-                if (gitName) return true
-                return "Please enter a github username"
-            }
-        },
+
         {
             type: "input",
             message:"Please provide the title of your project",
@@ -64,6 +36,11 @@ const questions = ()=>{
                 if (repo) return true;
                 return "Please enter a link";
             }
+        },
+        {
+            type:"input",
+            message:"Please provide a link to the deployed project",
+            name:"deployed"
         },
         {
             type: "input",
@@ -96,10 +73,6 @@ const questions = ()=>{
             type: "input",
             message:"Please provide a link to a screenshot",
             name:"screenshotLink",
-            validate:(screenshotLink)=>{
-                if (screenshotLink) return true;
-                return "Please enter the directory or URL of the screenshot"
-            }
         },
         {
             type: "list",

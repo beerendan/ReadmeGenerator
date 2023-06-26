@@ -16,6 +16,9 @@ function renderLicenseBadge(license) {
   if (license==="The Unlicense"){
     return "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)"
   }
+  if (license==="None"){
+    return ""
+  }
 }
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -24,22 +27,35 @@ function renderLicenseLink(license) {}
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license==="Apache2.0"){
-    return `Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
- 
-        http://www.apache.org/licenses/LICENSE-2.0`
-  }
-  if (license==="MIT"){
-    return ``
-  }
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+   let screenshot = "";
+  if (data.screenshotLink) {
+    for (let i = 0; i < data.screenshotLink.split(",").length; i++) {
+      screenshot += `![screenshot${i + 1}](${data.screenshotLink
+        .split(",")[i]
+        .trim()})`;
+    }}
+  renderLicenseBadge(data);
+  return `# ${data.projName}
 
+  ## Description
+${data.description}
+Technologies used: ${data.technologies}
+
+## Installation
+${data.installation}
+
+## Usage
+${data.usage}
+Screenshot of live project: ${screenshot}
+Link to deployed project: ${data.deployed}
+Link to project gitHub repository: ${data.repo}
+
+## Credits
+${data.credits}
 `;
 }
 
