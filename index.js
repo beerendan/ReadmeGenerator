@@ -105,12 +105,12 @@ const questions = ()=>{
             type: "list",
             message:"Please select the license for this project",
             name:"license",
-            choices:["Apache2.0","MIT","GNU AGPLv3","Mozilla Public 2.0","Boost Software 1.0" ],
+            choices:["Apache2.0","MIT","GNU AGPLv3","Mozilla Public 2.0","The Unlicense","None"],
         },
         {
             type:"checkbox",
             message:"Please select the technologies used to build this project",
-            choices:["HTML","CSS","JavaScript","Boostrap","Node.js","React"],
+            choices:["HTML","CSS","JavaScript","Boostrap","Node.js","React","Other"],
             name:"technologies",
         },
     ])
@@ -120,7 +120,11 @@ const questions = ()=>{
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    questions()
+    .then((answers)=>{}
+    )
+}
 
 // Function call to initialize app
 init();
